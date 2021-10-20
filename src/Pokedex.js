@@ -13,6 +13,7 @@ class Pokedex extends React.Component {
       )),
     }
     this.handleNext = this.handleNext.bind(this)
+    this.handlePrevious = this.handlePrevious.bind(this)
   }
 
   handleNext() {
@@ -21,6 +22,17 @@ class Pokedex extends React.Component {
     } else {
       this.setState(prevState => ({
         index: prevState.index + 1,
+      }))
+    }
+  }
+
+  handlePrevious() {
+    if (this.state.index === 0) {
+      this.setState({ index: this.state.pokemon.length - 1 })
+      console.log(this.state.index)
+    } else {
+      this.setState(prevState => ({
+        index: prevState.index - 1,
       }))
     }
   }
@@ -33,6 +45,7 @@ class Pokedex extends React.Component {
           </header>
 
           <div className='pokemons'>
+            <button onClick={this.handlePrevious}>Previous</button>
             {this.state.pokemon[this.state.index]}
             <button onClick={this.handleNext}>Next</button>
           </div>

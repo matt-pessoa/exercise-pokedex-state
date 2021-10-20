@@ -1,0 +1,130 @@
+@import url('http://fonts.cdnfonts.com/css/pokemon-solid');
+@import url('https://fonts.googleapis.com/css2?family=Yaldevi&display=swap');
+
+body {
+  margin: 0;
+  background-color: rgb(26, 24, 54);
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  color: antiquewhite;
+  font-family: 'Pokemon Solid', sans-serif;
+  font-size: 30px;
+  letter-spacing: 5px;
+}
+
+h1:hover {
+  cursor: default;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pokemons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 32%;
+  height: 30vh;
+  margin: 5px;
+  border-radius: 20px;
+  font-family: 'Yaldevi', sans-serif;
+  color: #1a1836;
+  transition: transform 250ms;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.name {
+  margin-left: 20px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+}
+
+.pok-img {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  margin: 0;
+}
+
+.pokemon-image {
+  margin: 0;
+  width: 150px;
+}
+
+.type {
+  border: none;
+  border-radius: 20px;
+  padding: 2px 7px;
+  width: 80px;
+  color: rgb(39, 36, 32);
+}
+
+.Electric {
+  background-color: #f2cb55;
+}
+
+.Electric .type {
+  background-color: #f8e2a0;
+}
+
+.Fire {
+  background-color: #e86969;
+}
+
+.Fire .type {
+  background-color: #e68d8d;
+}
+
+.Bug {
+  background-color: #8bd674;
+}
+
+.Bug .type {
+  background-color: #ade49c;
+}
+
+.Poison {
+  background-color: #a65dcc;
+}
+
+.Poison .type {
+  background-color: #af7dca;
+}
+
+.Psychic {
+  background-color: #cc5dc6;
+}
+
+.Psychic .type {
+  background-color: #d385cf;
+}
+
+.Normal {
+  background-color: #a8a878;
+}
+
+.Normal .type {
+  background-color: #bebea6;
+}
+
+.Dragon {
+  background-color: #7038f8;
+}
+
+.Dragon .type {
+  background-color: #998af1;
+}

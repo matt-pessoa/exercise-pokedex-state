@@ -45,9 +45,9 @@ class Pokedex extends React.Component {
           </header>
 
           <div className='pokemons'>
-            <button onClick={this.handlePrevious}>Previous</button>
+            <button className='pokemon-btn' onClick={this.handlePrevious}>Previous</button>
             {this.state.pokemon[this.state.index]}
-            <button onClick={this.handleNext}>Next</button>
+            <button className='pokemon-btn' onClick={this.handleNext}>Next</button>
           </div>
         </div>
       </section>

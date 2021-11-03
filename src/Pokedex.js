@@ -35,6 +35,25 @@ class Pokedex extends React.Component {
 			}));
 		}
 	}
+
+	handleFilter = (event) => {
+		const typeSelected = event.target.textContent;
+
+		if (typeSelected === "All") {
+			this.setState({
+				pokemon: data.map((obj, index) => (
+					<Pokemon key={index} pokemon={obj} />
+				)),
+			});
+		} else {
+			this.setState({
+				pokemon: data
+					.filter((obj) => obj.type === typeSelected)
+					.map((obj, index) => <Pokemon key={index} pokemon={obj} />),
+			});
+		}
+	};
+
 	render() {
 		return (
 			<section className="pokedex">
@@ -43,7 +62,7 @@ class Pokedex extends React.Component {
 						<h1>Pokédex</h1>
 					</header>
 
-					<Filter data={data} />
+					<Filter data={data} handleFilter={this.handleFilter} />
 
 					<div className="pokemons">
 						<button className="pokemon-btn" onClick={this.handlePrevious}>

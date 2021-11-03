@@ -1,13 +1,29 @@
 import React from "react";
 
 class Filter extends React.Component {
+	getUniqueTypes = () => {
+		const arrayOfTypes = this.props.data.map((obj) => obj.type);
+		const uniqueTypes = [...new Set(arrayOfTypes)];
+		return uniqueTypes;
+	};
+
+	renderButtons = () => {
+		const uniqueTypes = this.getUniqueTypes();
+
+		return uniqueTypes.map((type) => {
+			return (
+				<button key={type} onClick={this.props.handleFilter}>
+					{type}
+				</button>
+			);
+		});
+	};
 	render() {
 		return (
-			<ul>
-				{this.props.data.map((obj) => {
-					return <li>{obj.type}</li>;
-				})}
-			</ul>
+			<section className="filters">
+				<button onClick={this.props.handleFilter}>All</button>
+				{this.renderButtons()}
+			</section>
 		);
 	}
 }

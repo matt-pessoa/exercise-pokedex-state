@@ -2,7 +2,13 @@ import React from "react";
 
 class Filter extends React.Component {
 	render() {
-		return <h1>Hello world</h1>;
+		return (
+			<ul>
+				{this.props.data.map((obj) => {
+					return <li>{obj.type}</li>;
+				})}
+			</ul>
+		);
 	}
 }
 

@@ -43,7 +43,7 @@ class Pokedex extends React.Component {
 						<h1>Pokédex</h1>
 					</header>
 
-					<Filter />
+					<Filter data={data} />
 
 					<div className="pokemons">
 						<button className="pokemon-btn" onClick={this.handlePrevious}>

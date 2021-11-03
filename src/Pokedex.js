@@ -2,7 +2,7 @@ import React from "react";
 import Pokemon from "./Pokemon";
 import data from "./data";
 import Filter from "./Filter";
-import "./Pokedex.css";
+import "./css/Pokedex.css";
 
 class Pokedex extends React.Component {
 	constructor() {
@@ -36,7 +36,18 @@ class Pokedex extends React.Component {
 		}
 	}
 
+	handleSelect = (event) => {
+		const elementSelected = event.target;
+		const parentElement = elementSelected.parentNode;
+
+		elementSelected.className = "selected";
+
+		console.log(parentElement.children);
+	};
+
 	handleFilter = (event) => {
+		this.handleSelect(event);
+
 		const typeSelected = event.target.textContent;
 
 		if (typeSelected === "All") {
@@ -65,11 +76,19 @@ class Pokedex extends React.Component {
 					<Filter data={data} handleFilter={this.handleFilter} />
 
 					<div className="pokemons">
-						<button className="pokemon-btn" onClick={this.handlePrevious}>
+						<button
+							className="pokemon-btn"
+							onClick={this.handlePrevious}
+							// disabled={this.state.pokemon.length < 2}
+						>
 							Previous
 						</button>
 						{this.state.pokemon[this.state.index]}
-						<button className="pokemon-btn" onClick={this.handleNext}>
+						<button
+							className="pokemon-btn"
+							onClick={this.handleNext}
+							// disabled={this.state.pokemon.length < 2}
+						>
 							Next
 						</button>
 					</div>

@@ -1,4 +1,5 @@
 import React from "react";
+import "./css/Filter.css";
 
 class Filter extends React.Component {
 	getUniqueTypes = () => {
@@ -12,7 +13,11 @@ class Filter extends React.Component {
 
 		return uniqueTypes.map((type) => {
 			return (
-				<button key={type} onClick={this.props.handleFilter}>
+				<button
+					key={type}
+					className={`btn-${type}`}
+					onClick={this.props.handleFilter}
+				>
 					{type}
 				</button>
 			);
